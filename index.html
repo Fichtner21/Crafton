@@ -4,28 +4,42 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universitas Varsoviensis</title>
-    <link href="styles/style.css" rel="stylesheet">    
-    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>    
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.slider').bxSlider();
+      });
+  </script>  
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="logo"></div>
-      <nav>
-        <ul>
-          <li>I stopnia</li>
-          <li>II stopnia</li>
-          <li>Podyplomowe</li>
-          <li>Szkolenia</li>
-          <li>Usługi</li>
-        </ul>
-      </nav>
-      <div class="promo-more">
-        <div>Będziesz się uczyć z ciekawością<span>Obiecujemy.</span></div>
-        <div class="promo-links">
-          <a href="#">ZOBACZ WIĘCEJ</a>
-          <a href="#">UMÓW SIĘ Z ANIOŁEM</a>
+    <div class="over-nav">
+      <div class="slider"> 
+        <div class="slide"><img src="images/slide1.png"/></div>
+        <div class="slide"><img src="images/slide2.png"/></div>
+        <div class="slide"><img src="images/slide3.png"/></div>
+        <div class="slide"><img src="images/slide4.png"/></div>
+      </div>
+      <div class="container header-nav">
+        <div class="logo"><img src="images/UW-bialy.png"/></div>
+        <nav>
+          <ul>
+            <li>I stopnia</li>
+            <li>II stopnia</li>
+            <li>Podyplomowe</li>
+            <li>Szkolenia</li>
+            <li>Usługi</li>
+          </ul>
+        </nav>
+        <div class="promo-more">
+          <div>Będziesz się uczyć z ciekawością<span>Obiecujemy.</span></div>
+          <div class="promo-links">
+            <a href="#">ZOBACZ WIĘCEJ</a>
+            <a href="#">UMÓW SIĘ Z ANIOŁEM</a>
+          </div>
         </div>
       </div>
     </div>
@@ -128,91 +142,100 @@
 
   <footer>
     <div class="container">
-      <div class="footer__column with-map">
-        <div>ul. Głogowska 10</div>
-        <div>61-719 Poznań</div>
-        <div>tel. 61 27 11 000</div>
-        <div class="map"></div>
-      </div>
-      <div class="footer__column">
-        <ul>O Nas
-          <li>
-            <a href="#">Dlaczego CDV</a>
-          </li>
-          <li>
-            <a href="#">Kadra Naukowa</a>
-          </li>
-          <li>
-            <a href="#">Dla mediów</a>
-          </li>
-          <li>
-            <a href="#">Kontakt</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__column">
-        <ul>Dla kandydata
-          <li>
-            <a href="#">Poradnik maturzysty</a>
-          </li>
-          <li>
-            <a href="#">Rekrutacja</a>
-          </li>
-          <li>
-            <a href="#">Kredyt studencki</a>
-          </li>
-          <li>
-            <a href="#">Studia dla cudzoziemców</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__column">
-        <ul>Dla studenta
-          <li>
-            <a href="#">Wirtualna Uczelnia</a>
-          </li>
-          <li>
-            <a href="#">Stypendia</a>
-          </li>
-          <li>
-            <a href="#">Biuro Karier</a>
-          </li>
-          <li>
-            <a href="#">Studiuj dalej</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__column">
-        <ul>Dla biznesu
-          <li>
-            <a href="#">Współpraca z biznesem</a>
-          </li>
-          <li>
-            <a href="#">EmotionsLAB</a>
-          </li>
-          <li>
-            <a href="#">Wynajem sal</a>
-          </li>
-          <li>
-            <a href="#">Znajdź pracownika</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__column">
-        <ul>Na skróty
-          <li>
-            <a href="#">Aktualności</a>
-          </li>
-          <li>
-            <a href="#">Wydarzenia</a>
-          </li>
-          <li>
-            <a href="#">Konferencje</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-        </ul>
+      <div class="footer">
+        <div class="footer__column with-map">
+          <div>ul. Głogowska 10</div>
+          <div>61-719 Poznań</div>
+          <div>tel. 61 27 11 000</div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1633.7383919089937!2d16.931146652215737!3d52.415522964669925!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1552776445383" width="200" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="footer__column">
+         <div class="footer__title">O Nas</div>
+          <ul>
+            <li>
+              <a href="#">Dlaczego CDV</a>
+            </li>
+            <li>
+              <a href="#">Kadra Naukowa</a>
+            </li>
+            <li>
+              <a href="#">Dla mediów</a>
+            </li>
+            <li>
+              <a href="#">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <div class="footer__title">Dla kandydata</div>
+          <ul>
+            <li>
+              <a href="#">Poradnik maturzysty</a>
+            </li>
+            <li>
+              <a href="#">Rekrutacja</a>
+            </li>
+            <li>
+              <a href="#">Kredyt studencki</a>
+            </li>
+            <li>
+              <a href="#">Studia dla cudzoziemców</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <div class="footer__title">Dla studenta</div>
+          <ul>
+            <li>
+              <a href="#">Wirtualna Uczelnia</a>
+            </li>
+            <li>
+              <a href="#">Stypendia</a>
+            </li>
+            <li>
+              <a href="#">Biuro Karier</a>
+            </li>
+            <li>
+              <a href="#">Studiuj dalej</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <div class="footer__title">Dla biznesu</div>
+          <ul>
+            <li>
+              <a href="#">Współpraca z biznesem</a>
+            </li>
+            <li>
+              <a href="#">EmotionsLAB</a>
+            </li>
+            <li>
+              <a href="#">Wynajem sal</a>
+            </li>
+            <li>
+              <a href="#">Znajdź pracownika</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <div class="footer__title">Na skróty</div>
+          <ul>
+            <li>
+              <a href="#">Aktualności</a>
+            </li>
+            <li>
+              <a href="#">Wydarzenia</a>
+            </li>
+            <li>
+              <a href="#">Konferencje</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="owner">Projekt i realizacja: Crafton</div>
     </div>

@@ -1,2 +1,85 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+* {
+  box-sizing: border-box; }
+
+ul {
+  list-style: none; }
+
 body {
-  color: red; }
+  font-family: 'Muli';
+  font-size: 15px;
+  margin: 0 auto; }
+
+@font-face {
+  font-family: 'Muli';
+  src: url("fonts/Muli-Regular.ttf"); }
+
+.container {
+  margin: 0 auto;
+  max-width: 1190px; }
+
+header .over-nav {
+  position: relative; }
+  header .over-nav .bx-wrapper {
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    position: absolute;
+    top: 0; }
+  header .over-nav .slider {
+    z-index: 1; }
+    header .over-nav .slider .slide {
+      width: 100vw; }
+      header .over-nav .slider .slide img {
+        width: 100vw;
+        height: 100vh; }
+  header .over-nav .header-nav {
+    position: relative;
+    z-index: 999; }
+
+section {
+  height: 100vh;
+  border: 3px dashed blue; }
+  section:first-of-type {
+    margin-top: 100vh; }
+
+footer {
+  background-color: #001927; }
+  footer .footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    min-width: 100%; }
+    footer .footer__column * {
+      color: #fff;
+      text-decoration: none; }
+    footer .footer__column {
+      margin-top: 90px; }
+      footer .footer__column li {
+        margin-bottom: 25px; }
+        footer .footer__column li:hover {
+          text-decoration: underline; }
+        footer .footer__column li:last-of-type {
+          margin-bottom: 0; }
+    footer .footer__title {
+      margin-bottom: 30px; }
