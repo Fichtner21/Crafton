@@ -6,23 +6,41 @@
     <title>Universitas Varsoviensis</title>
     <link href="styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
-        $('.header__slider').bxSlider();
+        $('.header__slider').bxSlider({
+            speed: 500,
+            slideMargin: 0,
+            //infiniteLoop: true,
+            //pager: true,
+            //pagerCustom: true,
+            controls: true,
+            nextSelector: '.yel-next',
+            prevSelector: '.yel-prev',
+            nextText: '',
+            prevText: '',
+            onSliderLoad: function() {
+      $('.bx-pager-link, .bx-prev, .bx-next').attr('tabindex', '-1');
+    }
+    
+        });
       });
   </script>  
 </head>
 <body>
   <header>
     <div class="header">
+      
       <div class="header__slider"> 
         <div class="slide"><img src="images/slide1.png"/></div>
         <div class="slide"><img src="images/slide2.png"/></div>
         <div class="slide"><img src="images/slide3.png"/></div>
         <div class="slide"><img src="images/slide4.png"/></div>
       </div>
+      
       <div class="header-nav">
         <div class="header-container">
           <div class="logo"><img src="images/UW-bialy.png"/></div>
@@ -45,6 +63,10 @@
             <div class="promo-links">
               <a href="#">ZOBACZ WIĘCEJ</a>
               <a href="#">UMÓW SIĘ Z ANIOŁEM</a>
+            </div>
+            <div class="navigation-slider">
+              <div class="yel-prev"></div>
+              <div class="yel-next"></div>
             </div>
           </div>
         </div>
@@ -116,34 +138,56 @@
 
   <section class="over-form">
     <div class="container">
-      <form id="contactPopup" class="form" method="POST" novalidate action="../send-popup.php">
-        <div class="form-row">
-            <label for="popup-name" class="popText" style="margin-top: 15px;">Imię</label>
-            <input type="text" name="name" required id="popup-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
-            <label for="popup-surname" class="popText">Nazwisko</label>
-            <input type="text" name="surname" required id="popup-surname" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+      <div class="container__form">
+      <h1>Nie znalazłeś odpowiedniego kontaktu?</h1>
+      <h3>Skorzystaj z formularza.</h3>
+      <form id="contactPopup" class="form" method="POST" validate action="">
+
+        <div class="form__row">
+          <div class="full-input">            
+            <input id="name"
+            class="floating-input" type="text" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" required>  
+            <label class="form__label">Imię</label>
+            <span class="form__warning"></span>           
           </div>
-          <div class="form-row">
-            <label for="popup-email" class="popText">Adres e-mail</label>
-            <input type="email" name="email" required id="popup-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+          <div class="full-input">            
+            <input class="floating-input" type="text" required pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+            <label class="form__label">Nazwisko</label>
+            <span class="form__warning"></span>
           </div>
-        <div class="form-row">
-            <label for="field-message" class="popText">Treść wiadomości</label>
-            <textarea name="message" required data-error="Musisz wypełnić pole" id="popup-message" pattern=".+" placeholder="W celu szybszego kontaktu zostaw nam swój numer telefonu"></textarea>
         </div>
-        <div class="form-row">
-            <label class="checkbox-cnt">
-                <input type="checkbox" required data-error="Musisz zaznaczyć to pole" name="regulation">
-                <i class="state" aria-hidden="true"></i>
-                <span class="popText">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żadania dostępu do moich danych osobowych, ich zmiany oraz usunięcia</span>
-            </label>
-        </div>
-        <div class="form-row">
-            <button type="submit" class="submit-btn">
-                Wyślij
-            </button>
+          <div class="form__row">
+            <div class="full-input-email">              
+              <input class="floating-input" type="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+              <label class="form__label">Adres e-mail</label>
+              <span class="form__warning"></span>
+            </div>
           </div>
-      </form>
+          <div class="form__area"> 
+            <div class="full-input-email">             
+              <textarea class="floating-input" required pattern=".+"></textarea>
+              <label for="field-message" class="form__label">Treść wiadomości</label>
+              <span class="form__warning"></span>
+            </div>
+          </div>
+          <div class="form__row-regulation">
+            <div class="full-regulation">
+              <label class="checkbox">
+                <input type="checkbox" required/>               
+              </label>                  
+              <div class="text-regulation">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żadania dostępu do moich danych osobowych, ich zmiany oraz usunięcia
+              </div>              
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="full-input-email">
+              <button type="submit" class="submit-btn">
+                  Wyślij
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 

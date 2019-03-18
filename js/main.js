@@ -5,7 +5,9 @@ $(document).ready(function(){
       	$('.bxslider').bxSlider({
 	        mode: 'fade',
 	        captions: true,
-	        slideWidth: 600
+	        slideWidth: 600,
+	        pager: false,
+	        pagerCustom: true
       	});
   	});
 
@@ -18,7 +20,8 @@ $(document).ready(function(){
   		//console.log(scrollTop);
   		if (scrollTop > stickyNavTop) {
   			$('.header-nav').addClass('sticky');
-  			
+  			$('.logo').removeClass('logo').addClass('logo-animate');
+  			$('.nav .ul-nav li').removeClass('margin-top30');
   			//if(timeout){
   				//clearTimeout(timeout);
   				//timeout = null;
@@ -27,11 +30,18 @@ $(document).ready(function(){
   		} else {
   			//timeout = setTimeout(function(){
   				$('.header-nav').removeClass('sticky').addClass('trans');
+
   				
   			//},1000);
   			
   			//console.log('usunieto klase sticky');
   		}
+
+  		if (scrollTop == 0){
+			$('.logo-animate').removeClass('logo-animate').addClass('logo');
+			//$('.nav .ul-nav li').addClass('margin-top30');
+			//$('.margin-top30:after').css({'top':'100px'});
+		}
   	}
 
   	stickyNav();
@@ -47,7 +57,7 @@ $(document).ready(function(){
 			hH = $('.section').outerHeight(),
 			wH = $(window).height(),
 			wS = $(this).scrollTop();
-			console.log('hT: ' + hT + ' hH: ' + hH + ' wH: ' + wH + ' wS: ' + wS);
+			//console.log('hT: ' + hT + ' hH: ' + hH + ' wH: ' + wH + ' wS: ' + wS);
 		if(wS > (hT+hH-wH)){
 			$('.img').addClass('scale-plus');
 			console.log('doszlo');
@@ -56,6 +66,7 @@ $(document).ready(function(){
 		// 	$('.img').removeClass('scale-plus');
 		// }
 		
-	})  	
+	})  
 
+	
 });
