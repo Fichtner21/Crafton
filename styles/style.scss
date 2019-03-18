@@ -34,7 +34,16 @@ body {
 
 @font-face {
 	font-family: 'Muli';
-	src: url("fonts/Muli-Regular.ttf");
+	src: url("fonts/Muli-Regular.ttf") format("truetype"),
+	url("fonts/Muli-Light.ttf") format("truetype"),
+	url("fonts/Muli-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'Muli-Light';
+	src: url("fonts/Muli-Light") format('truetype');
+	font-weight: 200;
+	font-style: normal;
 }
 
 .container {
@@ -42,11 +51,45 @@ body {
 	max-width: 1190px;
 }
 
+header, section {
+	width: 100%;
+	height: 100vh;
+}
+
+$h1col: #002841;
+
 //HEADER
+
+.sticky {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	border-top: 0;
+	margin: 0 auto;
+	background-color: rgba(0,0,0,0.5);
+	transition: all 1s;
+}
+
+.trans {
+	transition: all 1s;
+}
+
+.clear {
+	content: "";
+	clear:both;
+	display: block;
+}
+
+.scale-plus {
+	transform: scale(1.1);
+	transition: all 0.5s;
+}
 
 header {
 
-	.over-nav {
+	.header{
 		position: relative;
 
 		.bx-wrapper {
@@ -58,7 +101,7 @@ header {
 			top: 0;
 		}
 
-		.slider {
+		&__slider {
 			z-index: 1;
 
 			.slide {
@@ -67,25 +110,200 @@ header {
 				img {
 					width: 100vw;
 					height: 100vh;
+					filter: brightness(50%);
 				}
 			}
 		}
 
 		.header-nav {
+			//position: relative;
+			//position: sticky;
+			z-index: 9999;
+			display: flex;
+			//justify-content: space-between;
+			justify-content: center;
+
+
+			.header-container {
+				display: flex;
+    			justify-content: space-between;
+    			width: 1190px;
+    			padding: 0 10px;
+
+				.logo {
+					margin-top: 40px;
+					margin-bottom: 10px;
+					z-index: 9999;
+				}
+
+				nav {
+					//margin-top: 75px;
+					position: sticky;
+
+					ul {
+						display: flex;
+
+						li {
+							margin-left: 75px;
+							padding: 65px 0;
+							transition: all 0.4s;
+
+							&:hover {
+								
+								a {
+									border-top: 3px solid rgba(255,255,255,0.5);
+									padding-top: 5px;
+									transition: all 0.5s;	
+								}
+							}
+
+							&:first-of-type {
+								margin-left: 0;
+							}
+
+							a {
+								text-decoration: none;
+								color: #fff;								
+							}							
+						}
+
+						> li:hover:after {
+							width: 100%;
+							left: 0;
+						}
+
+						> li:after {
+							content: "";
+						    display: block;
+						    position: absolute;
+						    top: 100px;
+						    left: 50%;
+						    width: 0;
+						    height: 3px;
+						    background: rgba(255,255,255,0.5);
+						    transition: all 0.5s ease-out;
+
+
+						}
+					}
+				}
+			}			
+		}
+
+		.promo-more {
 			position: relative;
 			z-index: 999;
+			font-size: 40px;
+			height: 100vh;
+			display: flex;
+			align-self: center;
+
+			.under-more {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				div {
+					color: #fff;
+					line-height: 60px;
+
+					span {
+						color: #00b6dc;					
+					}
+				}
+
+				.promo-links {
+					font-size: 14px;
+					text-decoration: none;
+					margin-top: 30px;
+
+					a {
+						text-decoration: none;
+						border-radius: 30px;
+						padding: 20px 40px;
+						transition: all 0.4s;
+						border: 2px solid #fff;
+						color: #fff;
+						background-color: rgba(0,0,0,0.5);	
+
+						&:hover {
+							color: $h1col;
+							background-color: #fff;
+						}
+
+						&:first-of-type {
+							margin-right: 20px;
+						}
+					}					
+				}
+			}				
 		}
 	}
 }
 
+// SECTIONS
+
 section {
 	//width: 100vw;
 	height: 100vh;
-	border: 3px dashed blue;
+	//border: 3px dashed blue;
 
 	&:first-of-type {
-		margin-top: 100vh;
+		//margin-top: 100vh;
 	}
+
+	article {
+		margin-top: 220px;
+		display: flex;
+
+		.description-img {
+			position: relative;							
+		}
+
+		.description-text {			
+
+			h1 {
+				color: $h1col;
+				font-size: 36px;
+				font-weight: 700;
+				margin-bottom: 55px;
+				margin-top: 10px;
+			}
+
+			p {
+				color: #333;
+				font-size: 18px;
+				margin-bottom: 50px;
+				line-height: 32px;
+				//margin-right: 50px;
+
+				a {
+					color: #01a7ca;
+					text-decoration: none;
+				}
+			}
+			
+			ul {
+				padding-left: 0;
+
+				li {
+
+				}
+			}
+		}
+
+		.description-text:nth-of-type(2n-1){
+			margin-right: 90px;
+		}
+
+		.description-text:nth-of-type(2n){
+			margin-left: 90px;
+		}
+	}
+}
+
+.over-form {
+	background-color: #f5f8fa;
 }
 
 footer {

@@ -10,35 +10,42 @@
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
-        $('.slider').bxSlider();
+        $('.header__slider').bxSlider();
       });
   </script>  
 </head>
 <body>
   <header>
-    <div class="over-nav">
-      <div class="slider"> 
+    <div class="header">
+      <div class="header__slider"> 
         <div class="slide"><img src="images/slide1.png"/></div>
         <div class="slide"><img src="images/slide2.png"/></div>
         <div class="slide"><img src="images/slide3.png"/></div>
         <div class="slide"><img src="images/slide4.png"/></div>
       </div>
-      <div class="container header-nav">
-        <div class="logo"><img src="images/UW-bialy.png"/></div>
-        <nav>
-          <ul>
-            <li>I stopnia</li>
-            <li>II stopnia</li>
-            <li>Podyplomowe</li>
-            <li>Szkolenia</li>
-            <li>Usługi</li>
-          </ul>
-        </nav>
+      <div class="header-nav">
+        <div class="header-container">
+          <div class="logo"><img src="images/UW-bialy.png"/></div>
+          <nav class="nav">
+            <ul class="ul-nav">
+              <li><a href="#">I stopnia</a></li>
+              <li><a href="#">II stopnia</a></li>
+              <li><a href="#">Podyplomowe</a></li>
+              <li><a href="#">Szkolenia</a></li>
+              <li><a href="#">Usługi</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="container">
+        
         <div class="promo-more">
-          <div>Będziesz się uczyć z ciekawością<span>Obiecujemy.</span></div>
-          <div class="promo-links">
-            <a href="#">ZOBACZ WIĘCEJ</a>
-            <a href="#">UMÓW SIĘ Z ANIOŁEM</a>
+          <div class="under-more">
+            <div>Będziesz się uczyć z ciekawością</br><span>Obiecujemy.</span></div>
+            <div class="promo-links">
+              <a href="#">ZOBACZ WIĘCEJ</a>
+              <a href="#">UMÓW SIĘ Z ANIOŁEM</a>
+            </div>
           </div>
         </div>
       </div>
@@ -55,28 +62,28 @@
               Dedykowane nauczycielom posiadającym przygotowanie pedagogiczne,którzy chcą uzyskać merytoryczne i metodyczne przygotowanie do nauczania kolejnego przedmiotu - Geografii.
             </p>
             <p>
-              Studia adresowane są do osób legitymujących się wyższym wykształceniem na poziomie studiów licencjackim o specjalnościach nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, lub słuchaczy legitymujących się wyższym wykształćeniem na poziomie studiów magisterskich nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, zgodnie z Rozporządzeniem Ministra Edukacji Narodowej z dnia 1 sierpnia 2017 r. w sprawie szczegółowych kwalifikacji wymaganych od nauczycieli<a href="#">(Dz.U. 2017 poz. 1575)</a>.
+              Studia adresowane są do osób legitymujących się wyższym wykształceniem na poziomie studiów licencjackim o specjalnościach nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, lub słuchaczy legitymujących się wyższym wykształćeniem na poziomie studiów magisterskich nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, zgodnie z Rozporządzeniem Ministra Edukacji Narodowej z dnia 1 sierpnia 2017 r. w sprawie szczegółowych kwalifikacji wymaganych od nauczycieli <a href="#">(Dz.U. 2017 poz. 1575)</a>.
             </p>
             <!-- <div class="requirements"> -->
-              <ul>Wymagane od kandydata:
-                <li>Ukończone studia wyższe</li>
-                <li>Przygotowanie pedagogiczne</li>
-              </ul>
+            <ul>Wymagane od kandydata:
+              <li><img src="images/arrow.png"/>Ukończone studia wyższe</li>
+              <li><img src="images/arrow.png"/>Przygotowanie pedagogiczne</li>
+            </ul>
             <!-- </div> -->
           <!-- </div> -->
         </div>
         <div class="description-img">
-          <img src="#"/>
+          <img src="images/Layer1.png"/>
         </div>
       </article>
     </div>
   </section>
 
-  <section>
+  <section class="section">
     <div class="container">
       <article>
-        <div class="description-img">
-          <img src="#"/>
+        <div class="description-img">          
+          <img class="img" src="images/Layer2.png"/>             
         </div>
         <div class="description-text">
           <h1>Po co?</h1>
@@ -101,13 +108,13 @@
           </p>
         </div>
         <div class="description-img">
-          <img src="#"/>
+          <img src="images/Layer3.png"/>
         </div>
       </article>
     </div>
   </section>
 
-  <section>
+  <section class="over-form">
     <div class="container">
       <form id="contactPopup" class="form" method="POST" novalidate action="../send-popup.php">
         <div class="form-row">
