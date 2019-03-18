@@ -344,18 +344,45 @@ header {
 
 // SECTIONS
 
+.in-view {
+	padding-left: 0;	
+	transition: all ease 1.5s;
+	overflow: hidden;
+}
+
 section {	
 	height: 100vh;
+	overflow: hidden;
 
 	article {
 		margin-top: 220px;
 		display: flex;
+		padding-left: 100vw;
+		overflow: hidden;
 
 		.description-img {
-			position: relative;							
+			position: relative;
+			width: 491px;
+			height: 512px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+				
+
+			img {
+				transition: all ease 1s;
+				height: 100%;
+				flex: 1; 
+
+				&:hover {
+					transform: scale(1.1);
+				}
+			}									
 		}
 
-		.description-text {			
+		.description-text {
+			flex: 0 0 610px;				
 
 			h1 {
 				color: $h1col;
@@ -369,7 +396,7 @@ section {
 				color: #333;
 				font-size: 18px;
 				margin-bottom: 50px;
-				line-height: 32px;				
+				line-height: 32px;							
 
 				a {
 					color: #01a7ca;
@@ -385,7 +412,7 @@ section {
 					margin-top: 30px;
 
 					img {
-						margin-right: 20px;
+						margin-right: 20px;						
 					}
 				}
 			}
@@ -435,7 +462,7 @@ section {
 				margin-bottom: 20px;
 
 				.full-input {
-					position: relative;					
+					position: relative;									
 				}
 
 				.full-input-email {
@@ -611,11 +638,35 @@ footer {
 
 		&__column * {
 			color: #fff;
-			text-decoration: none;			
+			text-decoration: none;
 		}
 
 		&__column {
 			margin-top: 90px;
+
+			.adress {
+				margin-bottom: 15px;
+			}
+
+			.map {
+				clip-path: circle(50% at 50% 50%);
+				filter: grayscale(100%);
+				margin-top: 45px;
+				max-width: 200px;
+				max-height: 200px;
+				position: relative;
+
+				.pin-maker {
+					position: absolute;
+					top: 40%;
+					left: 40%;
+					filter: invert(45%) sepia(67%) saturate(1629%) hue-rotate(156deg) brightness(102%) contrast(101%);
+				}
+
+				iframe {
+					overflow: hidden;
+				}
+			}
 
 			li {
 				margin-bottom: 25px;
@@ -627,12 +678,19 @@ footer {
 				&:last-of-type {
 					margin-bottom: 0;
 				}
-			}
+			}			
 		}
 
 		&__title {
 			margin-bottom: 30px;
 		}
+	}
+
+	.owner {
+		display: flex;
+		justify-content: flex-end;
+		color: #fff;
+		padding-bottom: 50px;
 	}	
 }
 

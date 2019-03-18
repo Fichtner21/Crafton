@@ -256,35 +256,62 @@ header .header {
           header .header .promo-more .under-more .promo-links a:first-of-type {
             margin-right: 20px; }
 
+.in-view {
+  padding-left: 0;
+  transition: all ease 1.5s;
+  overflow: hidden; }
+
 section {
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   section article {
     margin-top: 220px;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    padding-left: 100vw;
+    overflow: hidden; }
     section article .description-img {
-      position: relative; }
-    section article .description-text h1 {
-      color: #002841;
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 55px;
-      margin-top: 10px; }
-    section article .description-text p {
-      color: #333;
-      font-size: 18px;
-      margin-bottom: 50px;
-      line-height: 32px; }
-      section article .description-text p a {
-        color: #01a7ca;
-        text-decoration: none; }
-    section article .description-text ul {
-      padding-left: 0;
-      font-size: 18px; }
-      section article .description-text ul li {
-        margin-top: 30px; }
-        section article .description-text ul li img {
-          margin-right: 20px; }
+      position: relative;
+      width: 491px;
+      height: 512px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      overflow: hidden; }
+      section article .description-img img {
+        transition: all ease 1s;
+        height: 100%;
+        -ms-flex: 1;
+            flex: 1; }
+        section article .description-img img:hover {
+          transform: scale(1.1); }
+    section article .description-text {
+      -ms-flex: 0 0 610px;
+          flex: 0 0 610px; }
+      section article .description-text h1 {
+        color: #002841;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 55px;
+        margin-top: 10px; }
+      section article .description-text p {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 50px;
+        line-height: 32px; }
+        section article .description-text p a {
+          color: #01a7ca;
+          text-decoration: none; }
+      section article .description-text ul {
+        padding-left: 0;
+        font-size: 18px; }
+        section article .description-text ul li {
+          margin-top: 30px; }
+          section article .description-text ul li img {
+            margin-right: 20px; }
     section article .description-text:nth-of-type(2n-1) {
       margin-right: 90px; }
     section article .description-text:nth-of-type(2n) {
@@ -448,6 +475,25 @@ footer {
       text-decoration: none; }
     footer .footer__column {
       margin-top: 90px; }
+      footer .footer__column .adress {
+        margin-bottom: 15px; }
+      footer .footer__column .map {
+        -webkit-clip-path: circle(50% at 50% 50%);
+                clip-path: circle(50% at 50% 50%);
+        -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+        margin-top: 45px;
+        max-width: 200px;
+        max-height: 200px;
+        position: relative; }
+        footer .footer__column .map .pin-maker {
+          position: absolute;
+          top: 40%;
+          left: 40%;
+          -webkit-filter: invert(45%) sepia(67%) saturate(1629%) hue-rotate(156deg) brightness(102%) contrast(101%);
+                  filter: invert(45%) sepia(67%) saturate(1629%) hue-rotate(156deg) brightness(102%) contrast(101%); }
+        footer .footer__column .map iframe {
+          overflow: hidden; }
       footer .footer__column li {
         margin-bottom: 25px; }
         footer .footer__column li:hover {
@@ -456,3 +502,10 @@ footer {
           margin-bottom: 0; }
     footer .footer__title {
       margin-bottom: 30px; }
+  footer .owner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    color: #fff;
+    padding-bottom: 50px; }

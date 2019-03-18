@@ -8,39 +8,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="styles/lity.css" rel="stylesheet">
+    <script src="js/lity.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(document).ready(function(){
         $('.header__slider').bxSlider({
-            speed: 500,
+            speed: 1000,
             slideMargin: 0,
-            //infiniteLoop: true,
-            //pager: true,
-            //pagerCustom: true,
+            auto: true,
+            autoStart: true,
             controls: true,
             nextSelector: '.yel-next',
             prevSelector: '.yel-prev',
             nextText: '',
             prevText: '',
             onSliderLoad: function() {
-      $('.bx-pager-link, .bx-prev, .bx-next').attr('tabindex', '-1');
-    }
-    
+              $('.bx-pager-link, .bx-prev, .bx-next').attr('tabindex', '-1');
+            }    
         });
       });
   </script>  
 </head>
 <body>
   <header>
-    <div class="header">
-      
+    <div class="header">      
       <div class="header__slider"> 
         <div class="slide"><img src="images/slide1.png"/></div>
         <div class="slide"><img src="images/slide2.png"/></div>
         <div class="slide"><img src="images/slide3.png"/></div>
         <div class="slide"><img src="images/slide4.png"/></div>
-      </div>
-      
+      </div>      
       <div class="header-nav">
         <div class="header-container">
           <div class="logo"><img src="images/UW-bialy.png"/></div>
@@ -55,8 +53,7 @@
           </nav>
         </div>
       </div>
-      <div class="container">
-        
+      <div class="container">        
         <div class="promo-more">
           <div class="under-more">
             <div>Będziesz się uczyć z ciekawością</br><span>Obiecujemy.</span></div>
@@ -78,21 +75,17 @@
     <div class="container">
       <article>
         <div class="description-text">
-          <h1>Dla kogo?</h1>
-          <!-- <div class="for-whom"> -->
-            <p>
-              Dedykowane nauczycielom posiadającym przygotowanie pedagogiczne,którzy chcą uzyskać merytoryczne i metodyczne przygotowanie do nauczania kolejnego przedmiotu - Geografii.
-            </p>
-            <p>
-              Studia adresowane są do osób legitymujących się wyższym wykształceniem na poziomie studiów licencjackim o specjalnościach nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, lub słuchaczy legitymujących się wyższym wykształćeniem na poziomie studiów magisterskich nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, zgodnie z Rozporządzeniem Ministra Edukacji Narodowej z dnia 1 sierpnia 2017 r. w sprawie szczegółowych kwalifikacji wymaganych od nauczycieli <a href="#">(Dz.U. 2017 poz. 1575)</a>.
-            </p>
-            <!-- <div class="requirements"> -->
-            <ul>Wymagane od kandydata:
-              <li><img src="images/arrow.png"/>Ukończone studia wyższe</li>
-              <li><img src="images/arrow.png"/>Przygotowanie pedagogiczne</li>
-            </ul>
-            <!-- </div> -->
-          <!-- </div> -->
+          <h1>Dla kogo?</h1>          
+          <p>
+            Dedykowane nauczycielom posiadającym przygotowanie pedagogiczne,którzy chcą uzyskać merytoryczne i metodyczne przygotowanie do nauczania kolejnego przedmiotu - Geografii.
+          </p>
+          <p>
+            Studia adresowane są do osób legitymujących się wyższym wykształceniem na poziomie studiów licencjackim o specjalnościach nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, lub słuchaczy legitymujących się wyższym wykształćeniem na poziomie studiów magisterskich nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, zgodnie z Rozporządzeniem Ministra Edukacji Narodowej z dnia 1 sierpnia 2017 r. w sprawie szczegółowych kwalifikacji wymaganych od nauczycieli <a href="#">(Dz.U. 2017 poz. 1575)</a>.
+          </p>          
+          <ul>Wymagane od kandydata:
+            <li><img src="images/arrow.png"/>Ukończone studia wyższe</li>
+            <li><img src="images/arrow.png"/>Przygotowanie pedagogiczne</li>
+          </ul>            
         </div>
         <div class="description-img">
           <img src="images/Layer1.png"/>
@@ -128,10 +121,12 @@
           <p>
             Nasze kierunki studiów są interesujące i innowacyjne, tworzone we współpracy z pracodawcami oraz na podstawie trendów w światowej gospodarce i kierunku zmian na dynamicznym rynku pracy. Nasi absolwenci znajdują pracę zgodną ze swoimi zainteresowaniami i wykształceniem.
           </p>
-        </div>
+        </div>        
         <div class="description-img">
-          <img src="images/Layer3.png"/>
-        </div>
+          <iframe id="iframe" width="512" height="490"
+        src="https://www.youtube.com/embed/JAHZMMhRNQQ?autoplay=1" data-lity>
+            </iframe>
+        </div>      
       </article>
     </div>
   </section>
@@ -142,7 +137,6 @@
       <h1>Nie znalazłeś odpowiedniego kontaktu?</h1>
       <h3>Skorzystaj z formularza.</h3>
       <form id="contactPopup" class="form" method="POST" validate action="">
-
         <div class="form__row">
           <div class="full-input">            
             <input id="name"
@@ -195,11 +189,12 @@
     <div class="container">
       <div class="footer">
         <div class="footer__column with-map">
-          <div>ul. Głogowska 10</div>
-          <div>61-719 Poznań</div>
+          <div class="adress">ul. Głogowska 10</div>
+          <div class="adress">61-719 Poznań</div>
           <div>tel. 61 27 11 000</div>
           <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1633.7383919089937!2d16.931146652215737!3d52.415522964669925!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1552776445383" width="200" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <img src="images/pin-maker.png" class="pin-maker"/>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1633.7383919089937!2d16.931146652215737!3d52.415522964669925!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1552776445383" width="200" height="200" frameborder="0" style="border:0"></iframe>
           </div>
         </div>
         <div class="footer__column">
