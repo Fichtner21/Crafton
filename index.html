@@ -7,6 +7,7 @@
     <link href="styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="styles/lity.css" rel="stylesheet">
     <script src="js/lity.js"></script>
@@ -29,7 +30,7 @@
             }    
         });
       });
-  </script>  
+  </script>   
 </head>
 <body>
   <header>
@@ -42,16 +43,21 @@
       </div>      
       <div class="header-nav">
         <div class="header-container">
-          <div class="logo"><img src="images/UW-bialy.png"/></div>
+          <div class="logo"><a href=""><img src="images/UW-bialy.png"/></a></div>
           <nav class="nav">
-            <ul class="ul-nav">
-              <li><a href="#">I stopnia</a></li>
-              <li><a href="#">II stopnia</a></li>
-              <li><a href="#">Podyplomowe</a></li>
-              <li><a href="#">Szkolenia</a></li>
-              <li><a href="#">Usługi</a></li>
-            </ul>
-          </nav>
+            <div id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+               <ul class="ul-nav">
+                <li><a href="#">I stopnia</a></li>
+                <li><a href="#">II stopnia</a></li>
+                <li><a href="#">Podyplomowe</a></li>
+                <li><a href="#">Szkolenia</a></li>
+                <li><a href="#">Usługi</a></li>
+              </ul>                          
+          </nav>          
         </div>
       </div>
       <div class="container">        
@@ -125,7 +131,7 @@
         </div>        
         <div class="description-img">
           <iframe id="iframe" width="512" height="490"
-        src="https://www.youtube.com/embed/JAHZMMhRNQQ?autoplay=1" data-lity>
+        src="https://www.youtube.com/embed/JAHZMMhRNQQ?autoplay=1?enablejsapi=1" data-lity>
             </iframe>
         </div>      
       </article>
@@ -289,6 +295,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+
 
 </body>
 </html>

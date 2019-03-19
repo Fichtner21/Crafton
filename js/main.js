@@ -39,7 +39,7 @@ $(document).ready(function(){
 	
 
 	var $animation_elements = $('article');
-
+	
 	var $window = $(window);
 
 	//$window.on('scroll', check_if_in_view);
@@ -60,9 +60,11 @@ $(document).ready(function(){
     //check to see if this current container is within viewport
     if ((element_bottom_position >= window_top_position) &&
         (element_top_position <= window_bottom_position)) {
-      $element.addClass('in-view');
+      $element.css({"display":"flex"}).animate({
+      	opacity: 1      	
+      }, 1000); //addClass('in-view');
     } else {
-      $element.removeClass('in-view');
+      //$element.removeClass('in-view');
     }
   });
 }
@@ -72,8 +74,33 @@ var instance = lity('https://www.youtube.com/watch?v=JAHZMMhRNQQ');
     console.log('Lightbox closed');
 });
 // Bind as an event handler
-var o = $('#iframe').on('click', lity);
+var o = $('.ytp-button').on('click', lity);
 
 console.log(o);
+
+
+
+$('.logo a').animate({
+	scrollTop: ($('.header').offset().top)
+},1500);
+
+var menu_button = $('#menuToggle');
+var menu_ul = $('.ul-nav');
+var nav = $('.nav');
+
+var x = false;
+menu_button.on('click', function(){
+	if(!x){
+		menu_ul.fadeIn(1000);
+		nav.addClass('navBG');
+		x = true;
+	} else {
+		menu_ul.fadeOut(1000);
+		nav.removeClass('navBG');
+		x = false;
+	}
+})
+
+
 
 });
