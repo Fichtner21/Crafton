@@ -86,20 +86,40 @@ $('.logo a').animate({
 
 var menu_button = $('#menuToggle');
 var menu_ul = $('.ul-nav');
+var menu_li = menu_ul.children();
 var nav = $('.nav');
 
 var x = false;
 menu_button.on('click', function(){
 	if(!x){
 		menu_ul.fadeIn(1000);
-		nav.addClass('navBG');
+		nav.addClass('navBG');		
 		x = true;
 	} else {
 		menu_ul.fadeOut(1000);
 		nav.removeClass('navBG');
 		x = false;
 	}
+	menu_li.on('click',function(){
+			menu_ul.fadeOut();
+			nav.removeClass('navBG');
+		});
 })
+
+
+
+// menu_ul.children().on('click',function(){
+// 	menu_ul.fadeOut();
+// 	nav.removeClass('navBG');
+// 	menu_button.one('click',function(){
+// 		menu_ul.fadeIn();
+// 		nav.addClass('navBG');
+// 	})
+// })
+
+function someFn(){
+	console.log('powinno sie schować');
+}
 
 
 
