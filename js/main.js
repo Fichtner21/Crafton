@@ -60,7 +60,7 @@ $(document).ready(function(){
     //check to see if this current container is within viewport
     if ((element_bottom_position >= window_top_position) &&
         (element_top_position <= window_bottom_position)) {
-      $element.css({"display":"block"}).animate({
+      $element.css({"display":"flex"}).animate({
       	opacity: 1      	
       }, 1000); //addClass('in-view');
     } else {

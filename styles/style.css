@@ -352,7 +352,9 @@ section {
   @media screen and (max-width: 980px) {
     section {
       height: auto;
-      overflow: auto; } }
+      overflow: auto;
+      position: relative;
+      padding-bottom: 30px; } }
   section article {
     margin-top: 220px;
     overflow: hidden;
