@@ -187,6 +187,10 @@ header {
     			padding-top: 0;
     			width: auto;
 
+    			@media all and (max-width: 599px){
+    				display: none;
+    			}
+
     			.bx-pager-item {
     				margin-bottom: 25px;
 
@@ -213,11 +217,22 @@ header {
 
 			.slide {
 				width: 100vw;
+
+				@media all and (max-width: 980px){
+					width: auto !important;
+				}
 				
 				img {
 					width: 100vw;
 					height: 100vh;
 					filter: brightness(50%);
+
+					@media all and (max-width: 980px){
+						overflow: hidden;
+						flex: 1;
+						width: 100%;
+						height: auto !important;
+					}
 				}
 			}
 		}
@@ -370,6 +385,14 @@ header {
 			display: flex;
 			align-self: center;
 
+			@media screen and (max-width: 980px){
+				height: auto;
+
+				.yel-next, .yel-prev {
+					top: auto;
+				}
+			}
+
 			.under-more {
 				display: flex;
 				flex-direction: column;
@@ -407,6 +430,22 @@ header {
 						&:first-of-type {
 							margin-right: 20px;
 						}
+					}
+
+					@media all and (max-width: 980px){
+						display: flex;
+						flex-direction: column;
+						margin-bottom: 30px;
+
+						:first-of-type {
+							margin-bottom: 20px;
+							margin-right: 0 !important;
+						}
+
+						a {
+							padding: 10px 20px;
+							line-height: 2em;
+						}
 					}					
 				}
 			}				
@@ -426,6 +465,11 @@ section {
 	height: 100vh;
 	overflow: hidden;
 
+	@media screen and (max-width: 980px){
+		height: auto;
+		overflow: auto;
+	}
+
 	article {
 		margin-top: 220px;		
 		overflow: hidden;
@@ -433,7 +477,7 @@ section {
 
 		@media all and (max-width: 1280px){
 			flex-direction: column;
-			
+			margin-top: 0;
 		}
 
 		.description-img {
@@ -445,6 +489,10 @@ section {
 			justify-content: center;
 			overflow: hidden;
 			// padding-left: 100vw;	
+
+			@media all and (max-width: 980px){
+				display: none;
+			}
 
 			img {
 				transition: all ease 1s;
@@ -459,7 +507,6 @@ section {
 
 		.description-text {
 			flex: 0 0 610px;
-							
 
 			h1 {
 				color: $h1col;
@@ -497,10 +544,18 @@ section {
 
 		.description-text:nth-of-type(2n-1){
 			margin-right: 90px;
+
+			@media all and (max-width: 980px){
+				margin-right: 0;
+			}
 		}
 
 		.description-text:nth-of-type(2n){
 			margin-left: 90px;
+
+			@media all and (max-width: 980px){
+				margin-left: 0;
+			}
 		}
 	}
 }
@@ -546,7 +601,7 @@ section {
 				:nth-child(1){
 					margin-right: 30px;
 
-					@media all and (max-width: 580px){
+					@media all and (max-width: 599px){
 						margin-right: 0;												
 					}
 				}
@@ -556,8 +611,8 @@ section {
 					flex: 1;
 
 					#name {
-						@media all and (max-width: 580px){
-							//margin-bottom: 20px;
+						@media all and (max-width: 599px){
+							margin-bottom: 20px;
 						}
 					}					
 				}
@@ -690,7 +745,13 @@ section {
 							height: 16px;
 							visbility: hidden;
 							margin: 0;
-							cursor: pointer;							
+							cursor: pointer;
+
+							@media all and (max-width: 599px){
+								width: 30px;
+								height: 30px;
+								font-size: 20px;
+							}							
 						}
 
 						input[type="checkbox"]:after {
@@ -702,6 +763,11 @@ section {
 							width: 16px;
 							height: 16px;
 							text-align: center;
+
+							@media all and (max-width: 599px){
+								width: 30px;
+								height: 30px;
+							}
 						}
 
 						input[type="checkbox"]:checked:after {
@@ -790,6 +856,10 @@ footer {
 		justify-content: flex-end;
 		color: #fff;
 		padding-bottom: 50px;
+
+		@media screen and (max-width: 980px){
+			margin-top: 50px;
+		}
 	}	
 }
 

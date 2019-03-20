@@ -60,7 +60,7 @@ $(document).ready(function(){
     //check to see if this current container is within viewport
     if ((element_bottom_position >= window_top_position) &&
         (element_top_position <= window_bottom_position)) {
-      $element.css({"display":"flex"}).animate({
+      $element.css({"display":"block"}).animate({
       	opacity: 1      	
       }, 1000); //addClass('in-view');
     } else {
@@ -89,7 +89,7 @@ $('.logo a').animate({
 	var menu_li = menu_ul.children();
 	var nav = $('.nav');
 	var x = false;
-	
+
 	menu_button.on('click', function(){
 		if(x !== true) {
 			menu_ul.fadeIn(1000);
@@ -98,7 +98,7 @@ $('.logo a').animate({
 				menu_ul.fadeOut();
 				nav.removeClass('navBG');
 			});		
-			//x = true;
+			x = true;
 		} else {
 			menu_ul.fadeOut(1000);
 			nav.removeClass('navBG');

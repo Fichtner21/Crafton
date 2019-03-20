@@ -146,6 +146,9 @@ header .header {
           flex-direction: column;
       padding-top: 0;
       width: auto; }
+      @media all and (max-width: 599px) {
+        header .header .bx-wrapper .bx-pager {
+          display: none; } }
       header .header .bx-wrapper .bx-pager .bx-pager-item {
         margin-bottom: 25px; }
         header .header .bx-wrapper .bx-pager .bx-pager-item:last-of-type {
@@ -161,11 +164,21 @@ header .header {
     z-index: 1; }
     header .header__slider .slide {
       width: 100vw; }
+      @media all and (max-width: 980px) {
+        header .header__slider .slide {
+          width: auto !important; } }
       header .header__slider .slide img {
         width: 100vw;
         height: 100vh;
         -webkit-filter: brightness(50%);
                 filter: brightness(50%); }
+        @media all and (max-width: 980px) {
+          header .header__slider .slide img {
+            overflow: hidden;
+            -ms-flex: 1;
+                flex: 1;
+            width: 100%;
+            height: auto !important; } }
   header .header .header-nav {
     z-index: 9999;
     display: -ms-flexbox;
@@ -280,6 +293,11 @@ header .header {
     display: flex;
     -ms-flex-item-align: center;
         align-self: center; }
+    @media screen and (max-width: 980px) {
+      header .header .promo-more {
+        height: auto; }
+        header .header .promo-more .yel-next, header .header .promo-more .yel-prev {
+          top: auto; } }
     header .header .promo-more .under-more {
       display: -ms-flexbox;
       display: flex;
@@ -310,6 +328,19 @@ header .header {
             box-shadow: inset 0 0 10px #000; }
           header .header .promo-more .under-more .promo-links a:first-of-type {
             margin-right: 20px; }
+        @media all and (max-width: 980px) {
+          header .header .promo-more .under-more .promo-links {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+                flex-direction: column;
+            margin-bottom: 30px; }
+            header .header .promo-more .under-more .promo-links :first-of-type {
+              margin-bottom: 20px;
+              margin-right: 0 !important; }
+            header .header .promo-more .under-more .promo-links a {
+              padding: 10px 20px;
+              line-height: 2em; } }
 
 .in-view {
   transition: all ease 1.5s;
@@ -318,6 +349,10 @@ header .header {
 section {
   height: 100vh;
   overflow: hidden; }
+  @media screen and (max-width: 980px) {
+    section {
+      height: auto;
+      overflow: auto; } }
   section article {
     margin-top: 220px;
     overflow: hidden;
@@ -325,7 +360,8 @@ section {
     @media all and (max-width: 1280px) {
       section article {
         -ms-flex-direction: column;
-            flex-direction: column; } }
+            flex-direction: column;
+        margin-top: 0; } }
     section article .description-img {
       position: relative;
       width: 491px;
@@ -337,6 +373,9 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
       overflow: hidden; }
+      @media all and (max-width: 980px) {
+        section article .description-img {
+          display: none; } }
       section article .description-img img {
         transition: all ease 1s;
         height: 100%;
@@ -370,8 +409,14 @@ section {
             margin-right: 20px; }
     section article .description-text:nth-of-type(2n-1) {
       margin-right: 90px; }
+      @media all and (max-width: 980px) {
+        section article .description-text:nth-of-type(2n-1) {
+          margin-right: 0; } }
     section article .description-text:nth-of-type(2n) {
       margin-left: 90px; }
+      @media all and (max-width: 980px) {
+        section article .description-text:nth-of-type(2n) {
+          margin-left: 0; } }
 
 .over-form {
   background-color: #f5f8fa; }
@@ -407,13 +452,16 @@ section {
           flex-wrap: wrap; }
       .over-form .container .form__row :nth-child(1) {
         margin-right: 30px; }
-        @media all and (max-width: 580px) {
+        @media all and (max-width: 599px) {
           .over-form .container .form__row :nth-child(1) {
             margin-right: 0; } }
       .over-form .container .form__row .full-input {
         position: relative;
         -ms-flex: 1;
             flex: 1; }
+        @media all and (max-width: 599px) {
+          .over-form .container .form__row .full-input #name {
+            margin-bottom: 20px; } }
       .over-form .container .form__row .full-input-email {
         position: relative;
         min-width: 100%; }
@@ -512,6 +560,11 @@ section {
             visbility: hidden;
             margin: 0;
             cursor: pointer; }
+            @media all and (max-width: 599px) {
+              .over-form .container .form__row-regulation .full-regulation .checkbox input[type="checkbox"] {
+                width: 30px;
+                height: 30px;
+                font-size: 20px; } }
           .over-form .container .form__row-regulation .full-regulation .checkbox input[type="checkbox"]:after {
             content: "";
             background-color: #fff;
@@ -521,6 +574,10 @@ section {
             width: 16px;
             height: 16px;
             text-align: center; }
+            @media all and (max-width: 599px) {
+              .over-form .container .form__row-regulation .full-regulation .checkbox input[type="checkbox"]:after {
+                width: 30px;
+                height: 30px; } }
           .over-form .container .form__row-regulation .full-regulation .checkbox input[type="checkbox"]:checked:after {
             content: "\2714";
             padding: -5px;
@@ -581,3 +638,6 @@ footer {
         justify-content: flex-end;
     color: #fff;
     padding-bottom: 50px; }
+    @media screen and (max-width: 980px) {
+      footer .owner {
+        margin-top: 50px; } }
