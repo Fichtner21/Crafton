@@ -89,6 +89,12 @@ $h1col: #002841;
 	margin: 0 auto;
 	background-color: rgba(0,0,0,0.5);
 	transition: all 1s;
+
+	img {
+		@media screen and (max-width: 599px){
+			width: 70%;
+		}
+	}
 }
 
 header {
@@ -237,7 +243,11 @@ header {
 					z-index: 9999;					
 
 					img {
-						transition: ease 1s;					
+						transition: ease 1s;
+
+						@media screen and (max-width: 599px){
+							width: 70%;
+						}					
 
 						&:hover {						
 							filter: brightness(50%);
