@@ -34,16 +34,14 @@ body {
 
 @font-face {
 	font-family: 'Muli';
-	src: url("fonts/Muli-Regular.ttf") format("truetype"),
-	url("fonts/Muli-Light.ttf") format("truetype"),
-	url("fonts/Muli-ExtraLight.ttf") format("truetype");
+	src: url("fonts/Muli-Regular.ttf") format("truetype");
+	font-weight: 400; 	
 }
 
 @font-face {
-	font-family: 'Muli-Light';
-	src: url("fonts/Muli-Light") format('truetype');
+	font-family: 'Muli';
+	src: url("fonts/Muli-ExtraLight.ttf") format("truetype");
 	font-weight: 200;
-	font-style: normal;
 }
 
 .container {
@@ -240,11 +238,7 @@ header {
 		.header-nav {			
 			z-index: 9999;
 			display: flex;			
-			justify-content: center;
-
-			@media all and (max-width: 980px){
-
-			}
+			justify-content: center;			
 
 			.header-container {
 				display: flex;
@@ -255,8 +249,15 @@ header {
 				.logo {
 					margin-top: 40px;
 					margin-bottom: 10px;
-					z-index: 9999;
-					transition: all 1s;			
+					z-index: 9999;					
+
+					img {
+						transition: ease 1s;					
+
+						&:hover {						
+							filter: brightness(50%);
+						}
+					}								
 				}
 
 				.navBG {
@@ -401,6 +402,7 @@ header {
 				div {
 					color: #fff;
 					line-height: 60px;
+					font-weight: 200;
 
 					span {
 						color: #00b6dc;					
@@ -419,7 +421,8 @@ header {
 						transition: all 0.4s;
 						border: 2px solid #fff;
 						color: #fff;
-						background-color: rgba(0,0,0,0.5);	
+						background-color: rgba(0,0,0,0.5);
+						font-weight: 700;	
 
 						&:hover {
 							color: $h1col;
@@ -455,8 +458,7 @@ header {
 
 // SECTIONS
 
-.in-view {
-	//padding-left: 0 !important;	
+.in-view {		
 	transition: all ease 1.5s;
 	overflow: hidden;
 }
@@ -725,9 +727,9 @@ section {
 						color: #7b94a5;
 					}
 
-					.floating-input:focus {
-						padding: 25px 0 0 20px;
-					}	
+					 .floating-input {
+					 	padding: 25px 0 0 20px;
+					 }	
 				}				
 			}
 
@@ -815,23 +817,29 @@ footer {
 				margin-bottom: 15px;
 			}
 
-			.map {
-				clip-path: circle(50% at 50% 50%);
-				filter: grayscale(100%);
+			.map {				
 				margin-top: 45px;
 				max-width: 200px;
 				max-height: 200px;
 				position: relative;
+				clip-path: circle(50% at 50% 50%);
 
 				.pin-maker {
 					position: absolute;
-					top: 40%;
+					top: 35%;
 					left: 40%;
-					filter: invert(45%) sepia(67%) saturate(1629%) hue-rotate(156deg) brightness(102%) contrast(101%);
+					z-index: 1;				
 				}
 
 				iframe {
-					overflow: hidden;
+					overflow: hidden;					
+					height:200px;
+				    width:100%;
+				    border:0;
+				    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+				    filter: gray; /* IE6-9 */
+					  -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
+					  -webkit-backface-visibility: hidden;  /* Fix for transition flickering */
 				}
 			}
 

@@ -11,29 +11,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="styles/lity.css" rel="stylesheet">
     <script src="js/lity.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.header__slider').bxSlider({
-            speed: 1000,
-            slideMargin: 0,
-            //auto: true,
-            autoStart: true,
-            controls: true,
-            adaptiveHeight: true,
-            nextSelector: '.yel-next',
-            prevSelector: '.yel-prev',
-            nextText: '',
-            prevText: '',
-            onSliderLoad: function() {
-              $('.bx-pager-link, .bx-prev, .bx-next').attr('tabindex', '-1');
-            }    
-        });
-      });
-  </script>   
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>      
 </head>
 <body>
-  <header>
+  <header style="clear:both;">
     <div class="header">      
       <div class="header__slider"> 
         <div class="slide"><img src="images/slide1.png"/></div>
@@ -167,7 +148,7 @@
           <div class="form__area"> 
             <div class="full-input-email">             
               <textarea class="floating-input" required pattern=".+"></textarea>
-              <label for="field-message" class="form__label">Treść wiadomości</label>
+              <label class="form__label">Treść wiadomości</label>
               <span class="form__warning"></span>
             </div>
           </div>

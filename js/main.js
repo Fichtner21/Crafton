@@ -1,5 +1,21 @@
 $(document).ready(function(){	
 
+	$('.header__slider').bxSlider({
+        speed: 1000,
+        slideMargin: 0,
+        auto: true,
+        autoStart: true,
+        controls: true,
+        adaptiveHeight: true,
+        nextSelector: '.yel-next',
+        prevSelector: '.yel-prev',
+        nextText: '',
+        prevText: '',
+        onSliderLoad: function() {
+          $('.bx-pager-link, .bx-prev, .bx-next').attr('tabindex', '-1');
+        }    
+    });		
+
   	var stickyNavTop = $('.header-nav').offset().top;
   	console.log(stickyNavTop);
   	timeout = '';
@@ -23,20 +39,7 @@ $(document).ready(function(){
 	
 	$(window).scroll(function() {
 		stickyNav();
-	});	
-
-	// $(window).scroll(function(){
-	// 	var hT = $('.section').offset().top,
-	// 		hH = $('.section').outerHeight(true),
-	// 		wH = $(window).height(),
-	// 		wS = $(this).scrollTop();
-	// 		//console.log('hT: ' + hT + ' hH: ' + hH + ' wH: ' + wH + ' wS: ' + wS);
-	// 	if(wS > (hT+hH-wH)){
-	// 		$('.img').addClass('scale-plus');
-	// 		console.log('doszlo');
-	// 	}		
-	// });
-	
+	});		
 
 	var $animation_elements = $('article');
 	
@@ -68,17 +71,6 @@ $(document).ready(function(){
     }
   });
 }
-
-var instance = lity('https://www.youtube.com/watch?v=JAHZMMhRNQQ');
- instance.close().then(function() {
-    console.log('Lightbox closed');
-});
-// Bind as an event handler
-var o = $('.ytp-button').on('click', lity);
-
-console.log(o);
-
-
 
 $('.logo a').animate({
 	scrollTop: ($('.header').offset().top)
