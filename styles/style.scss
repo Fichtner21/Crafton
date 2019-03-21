@@ -506,7 +506,85 @@ section {
 				&:hover {
 					transform: scale(1.1);
 				}
-			}									
+			}						
+		}
+
+		.description-video {
+			position: relative;
+			max-width: 491px;
+			max-height: 512px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			// padding-left: 100vw;	
+
+			@media all and (max-width: 980px){
+				//display: block;
+			}
+
+			img {
+				transition: all ease 1s;
+				height: 100%;
+				flex: 1;
+				filter: brightness(50%); 
+
+				&:hover {
+					//transform: scale(1.1);
+				}
+			}
+
+			.start__button{
+				animation: start__btn 2s ease-out infinite;				
+			}
+
+			@keyframes start__btn {
+				0% {
+					box-shadow: 0 0 0 15px rgba(0, 182, 220, 0.41);
+					border-radius: 50%;
+				}
+
+				50% {
+					box-shadow: none;
+				}
+
+				100% {
+					box-shadow: 0 0 0 15px rgba(0, 182, 220, 0.41);
+					border-radius: 50%;
+				}
+			}
+
+			.start__button {
+				background-color: #099db7;
+				opacity: 0.5;
+				width: 95px;
+				height: 95px;
+				border-radius: 50%;
+				position: absolute;
+				transition: all ease 0.5s;											
+
+				.video__link {
+					min-width: 100%;
+					min-height: 100%;
+					position: absolute;
+					display: flex;
+			    	align-items: center;
+			    	justify-content: center;
+
+			    	&:hover {
+			    		.play {
+			    			transform: scale(1.1);
+			    		}
+			    	}
+
+			    	.play {
+						max-width: 45px;
+						max-height: 45px;
+						filter: brightness(200%) contrast(100%);
+						margin-left: 10px;
+					}	
+				}				
+			}
 		}
 
 		.description-text {
