@@ -65,7 +65,7 @@ $(document).ready(function(){
         (element_top_position <= window_bottom_position)) {
       $element.css({"display":"flex"}).animate({
       	opacity: 1      	
-      }, 1000); //addClass('in-view');
+      }, 1200); //addClass('in-view');
     } else {
       //$element.removeClass('in-view');
     }

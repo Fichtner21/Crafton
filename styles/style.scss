@@ -225,7 +225,7 @@ header {
 					height: 100vh;
 					filter: brightness(50%);
 
-					@media all and (max-width: 980px){
+					@media all and (max-width: 1980px){
 						overflow: hidden;
 						flex: 1;
 						width: 100%;
@@ -832,7 +832,8 @@ footer {
 				}
 
 				iframe {
-					overflow: hidden;					
+					overflow: hidden;
+					pointer-events: none;					
 					height:200px;
 				    width:100%;
 				    border:0;
@@ -840,6 +841,10 @@ footer {
 				    filter: gray; /* IE6-9 */
 					  -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
 					  -webkit-backface-visibility: hidden;  /* Fix for transition flickering */
+
+					  .widget-zoom {
+					  	display: none !important;
+					  }
 				}
 			}
 
